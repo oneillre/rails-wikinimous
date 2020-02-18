@@ -1,0 +1,7 @@
+<h1>Your articles</h1>
+<%= link_to "Add an article", new_article_path %>
+<% @articles.each do |article| %>
+<h2> <%= link_to article.title, article_path(article) %> </h2>
+<p><%= article.content %> <%= link_to ' &#9998;'.html_safe, edit_article_path(article) %>
+  <%= link_to '&#128465;'.html_safe, article_path(article), method: :delete  %> </p>
+<% end %>
